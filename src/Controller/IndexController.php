@@ -11,6 +11,17 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class IndexController extends AbstractController
 {
+    private string $appEnv;
+    private bool $appDebug;
+    private string $databaseUrl;
+
+    public function __construct(string $appEnv, bool $appDebug)
+    {
+        $this->appEnv = $appEnv;
+        $this->appDebug = $appDebug;
+        /*$this->databaseUrl = $databaseUrl;*/
+    }
+
     /**
      * @Route("/index")
      */
@@ -18,7 +29,8 @@ class IndexController extends AbstractController
     {
         return new JsonResponse(
             [
-                'env' => $_SERVER['APP_ENV'],
+                'env' => $this->appEnv,
+                'debug' => $this->appDebug,
                 'list' => [
                     random_int(0,100),
                     random_int(0,100),
