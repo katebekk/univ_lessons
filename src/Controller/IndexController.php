@@ -13,7 +13,6 @@ class IndexController extends AbstractController
 {
     private string $appEnv;
     private bool $appDebug;
-    private string $databaseUrl;
 
     public function __construct(string $appEnv, bool $appDebug)
     {
