@@ -32,11 +32,7 @@ class IndexController extends AbstractController
                 'debug' => $this->appDebug,
                 'list' => [
                     random_int(0,100),
-                    random_int(0,100),
-                    random_int(0,100),
-                    random_int(0,100),
-                    random_int(0,100),
-                    random_int(0,100),
+
                 ]
 
             ]
